@@ -35,6 +35,8 @@ class PostsController < ApplicationController
     # 글 하나만 보여주는 액션
         @post = Post.find(params[:post_id]) 
         # id값을 토대로 객체를 find할수있는 method
+        # @comments = Comment.where(:post_id => params[:post_id])
+        @comments = Comment.where(post_id: params[:post_id])
     end
     
     # Delete
