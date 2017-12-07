@@ -1,29 +1,29 @@
 Rails.application.routes.draw do
-#Resource: posts
-
-#Method를 이용해서 이 Resource를 조작하는 방법을 아래에 기술할 것
-
-  #1. 우리가 쓴 글들을 다 볼 수 있는 페이지(Read)
-  get '/posts' => 'posts#index'
-
-  #2. 우리가 새 글을 쓰는 페이지(Read)
-  get '/posts/new' => 'posts#new'
-
-  #3. 새 글을 받는 페이지(create)
-  post '/posts' => 'posts#create'
-
-  #4. 특정 글을 보는 페이지(Read)
-  get '/posts/:id' => 'posts#show', as:"post"
   
-  #5. 글을 수정하는 페이지
-  get '/posts/:id/edit' => 'posts#edit', as:"edit_post"
+#Method를 이용해서 이 Resource를 조작하는 방법을 아래에 기술할 것
+resources 'posts'
 
-  #6. 수정한 글을 받아서 업데이트 해주는 페이지(Update)
-  put '/posts/:id' => 'post#update'
-  patch '/posts/:id' => 'posts#update'
+  # #1. 우리가 쓴 글들을 다 볼 수 있는 페이지(Read)
+  # get '/posts' => 'posts#index'
 
-  #7. 특정 글을 삭제하는 페이지(Delete)
-  delete '/posts/:id' => 'posts#destroy'
+  # #2. 우리가 새 글을 쓰는 페이지(Read)
+  # get '/posts/new' => 'posts#new'
+
+  # #3. 새 글을 받는 페이지(create)
+  # post '/posts' => 'posts#create'
+
+  # #4. 특정 글을 보는 페이지(Read)
+  # get '/posts/:id' => 'posts#show', as:"post"
+  
+  # #5. 글을 수정하는 페이지
+  # get '/posts/:id/edit' => 'posts#edit', as:"edit_post"
+
+  # #6. 수정한 글을 받아서 업데이트 해주는 페이지(Update)
+  # put '/posts/:id' => 'post#update'
+  # patch '/posts/:id' => 'posts#update'
+
+  # #7. 특정 글을 삭제하는 페이지(Delete)
+  # delete '/posts/:id' => 'posts#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
