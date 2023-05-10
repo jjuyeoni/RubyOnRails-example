@@ -1,0 +1,14 @@
+<%#= form_tag post_path(@post.id), method: 'patch' do %>
+    <%#= text_field_tag 'title', @post.title %>
+    <%#= text_area_tag 'content', @post.content %>
+    <%#= submit_tag 'submit' %>
+<%# end%>
+
+<%= form_for @post do |f| %>
+    <%= f.text_field 'title' %>
+    <%= f.text_area 'content' %>
+    <%= f.submit 'submit' %>
+<% end%>
+
+<!--@post에는 이미 존재하는 post 값이 찾아져 있기 때문에-->
+<!--name에 해당하는 column에 담겨져있는 값도 자동 매칭됨-->
